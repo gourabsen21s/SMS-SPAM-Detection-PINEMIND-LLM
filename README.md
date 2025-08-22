@@ -51,7 +51,7 @@ PineMind is a fine-tuned solution, meticulously built to be both **performant** 
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/your-username/SMS-SPAM-Detection-PINEMIND-LLM.git
+   git clone https://github.com/gourabsen21s/SMS-SPAM-Detection-PINEMIND-LLM.git
    cd SMS-SPAM-Detection-PINEMIND-LLM
    ```
 
