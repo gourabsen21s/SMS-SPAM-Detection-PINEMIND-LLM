@@ -1,13 +1,6 @@
-Here’s a **beautified, GitHub-ready README** for your project with clear sections, badges, and styling ✨
-
-You can copy this directly into your `README.md` file:
 
 ````markdown
 # 🌲 PineMind LLM: SMS Spam Classifier  
-
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&logo=pytorch&logoColor=white)  
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)  
-![Status](https://img.shields.io/badge/Status-Active-success.svg)  
 
 A **powerful and efficient Large Language Model** engineered for precision SMS spam detection.  
 PineMind is a fine-tuned solution, meticulously built to be both **performant** and **easily adaptable** to new text classification tasks.  
