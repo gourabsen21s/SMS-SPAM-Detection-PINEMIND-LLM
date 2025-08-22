@@ -1,18 +1,49 @@
-
-````markdown
 # 🌲 PineMind LLM: SMS Spam Classifier  
 
-A **powerful and efficient Large Language Model** engineered for precision SMS spam detection.  
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)  
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?logo=pytorch&logoColor=white)  
+![Tokenizer](https://img.shields.io/badge/Tokenizer-TikToken-green)  
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)  
+![Status](https://img.shields.io/badge/Status-Active-success)  
+
+A **powerful and efficient Large Language Model** engineered for **precision SMS spam detection**.  
 PineMind is a fine-tuned solution, meticulously built to be both **performant** and **easily adaptable** to new text classification tasks.  
 
 ---
 
 ## 🌟 Key Features  
 
-✅ **Custom Transformer Architecture** – Built on a streamlined transformer with MultiHeadAttention, GELU activation, FeedForward layers, and LayerNorm.  
-✅ **Highly Efficient Classification** – Fine-tuned on SMS spam detection for superior accuracy.  
+✅ **Custom Transformer Architecture** – Streamlined with MultiHeadAttention, GELU activation, FeedForward layers, and LayerNorm.  
+✅ **Highly Efficient Classification** – Fine-tuned on SMS spam detection for **superior accuracy**.  
 ✅ **Fine-Tuning Ready** – Easily adaptable for sentiment analysis, topic labeling, or any classification task.  
 ✅ **PyTorch Implementation** – Clean, modular, and well-commented code for easy modification.  
+
+---
+
+## 🏗️ Project Architecture  
+
+```
+          ┌───────────────────────┐
+          │      Input SMS        │
+          └──────────┬────────────┘
+                     │
+           ┌─────────▼─────────┐
+           │  Preprocessing     │
+           │ (tokenization via │
+           │      TikToken)    │
+           └─────────┬─────────┘
+                     │
+           ┌─────────▼──────────┐
+           │   PineMind LLM     │
+           │ (GPT-2 Backbone +  │
+           │  Custom Classifier)│
+           └─────────┬──────────┘
+                     │
+           ┌─────────▼─────────┐
+           │   Prediction       │
+           │   Spam / Not Spam  │
+           └────────────────────┘
+```
 
 ---
 
@@ -22,63 +53,69 @@ PineMind is a fine-tuned solution, meticulously built to be both **performant** 
    ```bash
    git clone https://github.com/your-username/SMS-SPAM-Detection-PINEMIND-LLM.git
    cd SMS-SPAM-Detection-PINEMIND-LLM
-````
+   ```
 
-2. **Install dependencies**
-
+2. **Install dependencies**  
    ```bash
    pip install -r requirements.txt
    ```
+   *(requirements.txt should include: `torch`, `pandas`, `tiktoken`)*  
 
-   *(requirements.txt should include: `torch`, `pandas`, `tiktoken`)*
-
-3. **Download Pre-trained GPT-2 Weights**
-
-   * PineMind is fine-tuned on GPT-2 (355M).
-   * Download weights manually and place them in:
-
+3. **Download Pre-trained GPT-2 Weights**  
+   - PineMind is fine-tuned on GPT-2 (355M).  
+   - Download weights manually and place them in:  
      ```
      models/355M/
      ```
-
-     *(Files: `hparams.json`, `model.ckpt`, etc.)*
-
----
-
-## 🚀 Getting Started
-
-The core workflow is available in **`classifier.ipynb`**, which walks through:
-
-* Data preprocessing
-* Model training
-* Evaluation
-* Prediction on new messages
+     *(Files: `hparams.json`, `model.ckpt`, etc.)*  
 
 ---
 
-## 📝 Training the Model
+## 🚀 Getting Started  
 
-* **Base Model**: GPT-2 (355M)
-* **Optimizer**: AdamW
-* **Learning Rate**: `5e-5`
-* **Weight Decay**: `0.1`
-* **Dataset**: Publicly available SMS Spam Detection dataset
+The core workflow is available in **`classifier.ipynb`**, which walks through:  
 
-**Steps:**
-
-1. Ensure your dataset is in `spam.csv` with columns: **Text, Label**
-2. Run `classifier.ipynb`
-3. The notebook will handle:
-
-   * Train/Validation/Test split
-   * Training & saving weights (`review_classifier.pth`)
-   * Performance evaluation
+* Data preprocessing  
+* Model training  
+* Evaluation  
+* Prediction on new messages  
 
 ---
 
-## 🎯 Making Predictions
+## 📝 Training the Model  
 
-Example usage after training:
+- **Base Model**: GPT-2 (355M)  
+- **Optimizer**: AdamW  
+- **Learning Rate**: `5e-5`  
+- **Weight Decay**: `0.1`  
+- **Dataset**: Public SMS Spam Detection dataset  
+
+**Steps:**  
+1. Ensure your dataset is in `spam.csv` with columns: **Text, Label**  
+2. Run `classifier.ipynb`  
+3. The notebook will handle:  
+   - Train/Validation/Test split  
+   - Training & saving weights (`review_classifier.pth`)  
+   - Performance evaluation  
+
+---
+
+## 📊 Evaluation  
+
+📌 Below are placeholder results (replace with your actual metrics after training):  
+
+| Metric         | Score   |
+|----------------|---------|
+| Accuracy       | 98.2%   |
+| Precision      | 97.5%   |
+| Recall         | 98.9%   |
+| F1-Score       | 98.2%   |
+
+---
+
+## 🎯 Making Predictions  
+
+Example usage after training:  
 
 ```python
 import torch
@@ -106,7 +143,7 @@ print(f"The message is classified as: {result}")
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure  
 
 ```
 SMS-SPAM-Detection-PINEMIND-LLM/
@@ -123,41 +160,48 @@ SMS-SPAM-Detection-PINEMIND-LLM/
 
 ---
 
-## 🤝 Contributing
+## 🚧 Future Enhancements  
 
-We welcome contributions to make PineMind even better!
+🔹 Extend support for **multi-class classification** (e.g., topic detection).  
+🔹 Add **web API (Flask/FastAPI)** for real-time SMS classification.  
+🔹 Integrate into **mobile apps** for on-device spam filtering.  
+🔹 Experiment with **larger transformer backbones** (GPT-NeoX, LLaMA).  
 
-1. Fork the repository
-2. Create your branch:
+---
 
+## 🤝 Contributing  
+
+We welcome contributions to make PineMind even better!  
+
+1. Fork the repository  
+2. Create your branch:  
    ```bash
    git checkout -b feature/your-feature-name
-   ```
-3. Commit your changes:
-
+   ```  
+3. Commit your changes:  
    ```bash
    git commit -m "feat: Add your feature"
-   ```
-4. Push to the branch:
-
+   ```  
+4. Push to the branch:  
    ```bash
    git push origin feature/your-feature-name
-   ```
-5. Open a Pull Request 🚀
+   ```  
+5. Open a Pull Request 🚀  
 
 ---
 
-## 📄 License
+## 📄 License  
 
-PineMind is distributed under the **MIT License**.
-See the [LICENSE](LICENSE) file for details.
+PineMind is distributed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for details.  
 
 ---
 
-## 📧 Contact
+## 📧 Contact  
 
-👤 **Gourab Sen**
-📩 Email: [gourabsen.21.2001@gmail.com](mailto:gourabsen.21.2001@gmail.com)
+👤 **Gourab Sen**  
+📩 Email: [gourabsen.21.2001@gmail.com](mailto:gourabsen.21.2001@gmail.com)  
+🔗 Project Link: [SMS-SPAM-Detection-PINEMIND-LLM](https://github.com/your-username/SMS-SPAM-Detection-PINEMIND-LLM)  
 
-```
-
+---
+✨ *“Stop spam in its tracks with PineMind LLM!”* ✨
